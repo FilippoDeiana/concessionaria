@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <header class="container-fluid" th:insert="fragments/header.html"></header>
+    
+    <div class="container">
+		<div class="card mt-2">
+			<form th:action="@{/auto/update/}+${auto.id}" method="POST">
+				<div class="card-head">
+				<div class="card-header">
+				<h3>Update Auto</h3>
+				</div>
+					
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<label for="targa">Targa</label> <input type="text"
+								name="targa" class="form-control" id="targa" 
+								th:value="${auto.targa}">
+						</div>
+						<div class="col">
+							<label for="modello">Modello</label> <input type="text"
+								name="modello" class="form-control" id="modello" 
+								th:value="${auto.modello}">
+						</div>
+						<div class="col-4">
+							<label for="select">Clienti</label> 
+							<select name="cliente" id="select" class="form-select">
+								<option th:value="null" selected>Seleziona Cliente</option>
+								
+								<option th:each="cliente : ${clienti}" th:value="${cliente.id}">
+								  <span th:text="${cliente.nome}"></span> <span th:text="${cliente.cognome}"></span>
+								</option>
+							</select>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-primary">Inserisci</button>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>

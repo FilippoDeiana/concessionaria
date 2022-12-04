@@ -1,0 +1,9 @@
+com\corso\concessionaria\entity\AutoEntity.class
+com\corso\concessionaria\controller\AutoController.class
+com\corso\concessionaria\entity\ClienteEntity.class
+com\corso\concessionaria\ConcessionariaApplication.class
+com\corso\concessionaria\services\ClienteService.class
+com\corso\concessionaria\controller\ClienteController.class
+com\corso\concessionaria\repositories\ClienteRepository.class
+com\corso\concessionaria\services\AutoService.class
+com\corso\concessionaria\repositories\AutoRepository.class
